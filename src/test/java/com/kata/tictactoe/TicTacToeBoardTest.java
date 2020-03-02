@@ -50,4 +50,10 @@ public class TicTacToeBoardTest {
     public void ticTacToeBoardShouldReturnFalseWhenPlayerXDoesNotPlayOnPlayedPositionSay_11(){
         assertFalse(ticTacToeBoard.isPlayedPosition(1, 1));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnTrueWhenPlayerOPlaysOnPlayedPositionSay_11(){
+        ticTacToeBoard.setValue(1,1, 'O');
+        assertTrue(ticTacToeBoard.isPlayedPosition(1, 1));
+    }
 }

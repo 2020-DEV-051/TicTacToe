@@ -16,6 +16,6 @@ class TicTacToeBoard {
     }
 
     public boolean isPlayedPosition(int row, int col) {
-        return this.getValue(row, col) == 'X';
+        return this.getValue(row, col) == 'X' || this.getValue(row,col) == 'O';
     }
 }
