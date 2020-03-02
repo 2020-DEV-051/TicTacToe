@@ -49,4 +49,8 @@ class TicTacToeBoard {
         return isFirstDiagonalFullOfEitherXOrO(value)
                 || isSecondDiagonalFullOfEitherXOrO(value);
     }
+
+    public boolean isBoardFull() {
+        return true;
+    }
 }
