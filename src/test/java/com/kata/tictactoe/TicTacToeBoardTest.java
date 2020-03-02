@@ -94,7 +94,7 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(0,2, 'X');
         ticTacToeBoard.setValue(1,1, 'X');
         ticTacToeBoard.setValue(2,0, 'X');
-        assertTrue(ticTacToeBoard.isFirstDiagonalFullOfX('X'));
+        assertTrue(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO('X'));
     }
 
     @Test
@@ -102,6 +102,6 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(0,2, 'X');
         ticTacToeBoard.setValue(1,1, 'O');
         ticTacToeBoard.setValue(2,0, 'X');
-        assertFalse(ticTacToeBoard.isFirstDiagonalFullOfX('X'));
+        assertFalse(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO('X'));
     }
 }
