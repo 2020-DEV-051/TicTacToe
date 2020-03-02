@@ -40,6 +40,8 @@ class TicTacToeBoard {
     }
 
     public boolean isSecondDiagonalFullOfEitherXOrO(char value) {
-        return true;
+        return this.getValue(0, 0) == value
+                && this.getValue(1, 1) == value
+                && this.getValue(2, 2) == value;
     }
 }
