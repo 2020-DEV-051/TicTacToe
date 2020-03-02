@@ -96,4 +96,12 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,0, 'X');
         assertTrue(ticTacToeBoard.isFirstDiagonalFullOfX('X'));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnFalseIfFirstDiagonalIsNotFullOfX() {
+        ticTacToeBoard.setValue(0,2, 'X');
+        ticTacToeBoard.setValue(1,1, 'O');
+        ticTacToeBoard.setValue(2,0, 'X');
+        assertFalse(ticTacToeBoard.isFirstDiagonalFullOfX('X'));
+    }
 }

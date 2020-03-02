@@ -34,6 +34,8 @@ class TicTacToeBoard {
     }
 
     public boolean isFirstDiagonalFullOfX(char value) {
-        return true;
+        return this.getValue(0, 2) == value
+                && this.getValue(1, 1) == value
+                && this.getValue(2, 0) == value;
     }
 }
