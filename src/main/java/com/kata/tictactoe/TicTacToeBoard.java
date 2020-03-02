@@ -62,6 +62,15 @@ class TicTacToeBoard {
     }
 
     void displayBoard() {
-        System.out.print("---\r\n---\r\n---\r\n");
+        for (char[] row : this.box){
+            for (char c : row) {
+                if (c != X && c != O) {
+                    System.out.print('-');
+                } else {
+                    System.out.print(c);
+                }
+            }
+            System.out.println();
+        }
     }
 }

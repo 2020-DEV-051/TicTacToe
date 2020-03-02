@@ -182,4 +182,11 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.displayBoard();
         assertThat(outContent.toString(), is("---\r\n---\r\n---\r\n"));
     }
+
+    @Test
+    public void ticTacToeBoardShouldBeDisplayedWithXAtIndex_00IfXIsSetAtThatIndex() {
+        ticTacToeBoard.setValue(0,0,'X');
+        ticTacToeBoard.displayBoard();
+        assertThat(outContent.toString(), is("X--\r\n---\r\n---\r\n"));
+    }
 }
