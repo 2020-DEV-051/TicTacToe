@@ -22,6 +22,8 @@ class TicTacToeBoard {
     }
 
     public boolean isFirstRowFullOfO(int row, char value) {
-        return true;
+        return this.getValue(row, 0) == value
+                && this.getValue(row, 1) == value
+                && this.getValue(row, 2) == value;
     }
 }
