@@ -3,6 +3,7 @@ package com.kata.tictactoe;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -36,5 +37,11 @@ public class TicTacToeBoardTest {
     public void ticTacToeBoardShouldGetXAtIndex_20_WhenSetValueIsXAtThatIndex() {
         ticTacToeBoard.setValue(2,0, 'X');
         assertThat(ticTacToeBoard.getValue(2, 0), is('X'));
+    }
+
+    @Test
+    public void ticTacToeBoardShouldReturnTrueWhenPlayerXPlaysOnPlayedPositionSay_11(){
+        ticTacToeBoard.setValue(1,1, 'X');
+        assertTrue(ticTacToeBoard.isPlayedPosition(1, 1));
     }
 }

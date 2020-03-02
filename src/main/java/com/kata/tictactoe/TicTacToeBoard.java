@@ -14,4 +14,8 @@ class TicTacToeBoard {
     char getValue(int row, int col) {
         return this.box[row][col];
     }
+
+    public boolean isPlayedPosition(int row, int col) {
+        return true;
+    }
 }
