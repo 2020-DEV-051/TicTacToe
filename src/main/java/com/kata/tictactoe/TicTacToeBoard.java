@@ -1,6 +1,8 @@
 package com.kata.tictactoe;
 
 class TicTacToeBoard {
+    private static final char X = 'X';
+    private static final char O = 'O';
     char[][] box;
 
     TicTacToeBoard() {
@@ -16,6 +18,6 @@ class TicTacToeBoard {
     }
 
     public boolean isPlayedPosition(int row, int col) {
-        return this.getValue(row, col) == 'X' || this.getValue(row,col) == 'O';
+        return this.getValue(row, col) == X || this.getValue(row,col) == O;
     }
 }
