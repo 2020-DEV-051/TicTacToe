@@ -104,4 +104,12 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,0, 'X');
         assertFalse(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO('X'));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnTrueIfSecondDiagonalIsFullOfX() {
+        ticTacToeBoard.setValue(0,0, 'X');
+        ticTacToeBoard.setValue(1,1, 'X');
+        ticTacToeBoard.setValue(2,2, 'X');
+        assertTrue(ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO('X'));
+    }
 }
