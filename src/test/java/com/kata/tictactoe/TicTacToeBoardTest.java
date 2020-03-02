@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
 public class TicTacToeBoardTest {
@@ -43,5 +44,10 @@ public class TicTacToeBoardTest {
     public void ticTacToeBoardShouldReturnTrueWhenPlayerXPlaysOnPlayedPositionSay_11(){
         ticTacToeBoard.setValue(1,1, 'X');
         assertTrue(ticTacToeBoard.isPlayedPosition(1, 1));
+    }
+
+    @Test
+    public void ticTacToeBoardShouldReturnFalseWhenPlayerXDoesNotPlayOnPlayedPositionSay_11(){
+        assertFalse(ticTacToeBoard.isPlayedPosition(1, 1));
     }
 }
