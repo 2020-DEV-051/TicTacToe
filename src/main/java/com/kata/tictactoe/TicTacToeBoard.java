@@ -12,6 +12,6 @@ class TicTacToeBoard {
     }
 
     public char getValue(int row, int col) {
-        return 'O';
+        return this.box[row][col];
     }
 }

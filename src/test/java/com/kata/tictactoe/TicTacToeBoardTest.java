@@ -31,4 +31,10 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,0, 'O');
         assertThat(ticTacToeBoard.getValue(2, 0), is('O'));
     }
+
+    @Test
+    public void ticTacToeBoardShouldGetXAtIndex_20_WhenSetValueIsXAtThatIndex() {
+        ticTacToeBoard.setValue(2,0, 'X');
+        assertThat(ticTacToeBoard.getValue(2, 0), is('X'));
+    }
 }
