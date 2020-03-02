@@ -28,6 +28,8 @@ class TicTacToeBoard {
     }
 
     public boolean isFirstColumnFullOfX(int col, char value) {
-        return true;
+        return this.getValue(0, col) == value
+                && this.getValue(1, col) == value
+                && this.getValue(2, col) == value;
     }
 }

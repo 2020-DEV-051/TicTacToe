@@ -80,4 +80,12 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,0, 'X');
         assertTrue(ticTacToeBoard.isFirstColumnFullOfX(0, 'X'));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnFalseIfFirstColumnIsNotFullOfX() {
+        ticTacToeBoard.setValue(0,0, 'X');
+        ticTacToeBoard.setValue(1,0, 'O');
+        ticTacToeBoard.setValue(2,0, 'X');
+        assertFalse(ticTacToeBoard.isFirstColumnFullOfX(0, 'X'));
+    }
 }
