@@ -60,4 +60,8 @@ class TicTacToeBoard {
         }
         return true;
     }
+
+    void displayBoard() {
+        System.out.print("---\r\n---\r\n---\r\n");
+    }
 }

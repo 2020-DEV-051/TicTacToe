@@ -1,7 +1,11 @@
 package com.kata.tictactoe;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.core.Is.is;
@@ -11,10 +15,19 @@ import static org.junit.Assert.assertThat;
 public class TicTacToeBoardTest {
 
     private TicTacToeBoard ticTacToeBoard;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    private final PrintStream originalOut = System.out;
 
     @Before
     public void setUp() {
         ticTacToeBoard = new TicTacToeBoard();
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
     }
 
     @Test
@@ -162,5 +175,11 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,1, 'X');
         ticTacToeBoard.setValue(2,0, 'O');
         assertFalse(ticTacToeBoard.isBoardFull());
+    }
+
+    @Test
+    public void ticTacToeBoardShouldBeDisplayedWithHyphenSymbolsBeforeGameStarts() {
+        ticTacToeBoard.displayBoard();
+        assertThat(outContent.toString(), is("---\r\n---\r\n---\r\n"));
     }
 }
