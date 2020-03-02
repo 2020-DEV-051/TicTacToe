@@ -88,4 +88,12 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.setValue(2,0, 'X');
         assertFalse(ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(0, 'X'));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnTrueIfFirstDiagonalIsFullOfX() {
+        ticTacToeBoard.setValue(0,2, 'X');
+        ticTacToeBoard.setValue(1,1, 'X');
+        ticTacToeBoard.setValue(2,0, 'X');
+        assertTrue(ticTacToeBoard.isFirstDiagonalFullOfX('X'));
+    }
 }
