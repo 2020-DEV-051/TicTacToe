@@ -23,13 +23,17 @@ class TicTacToeGame {
         ticTacToeBoard.setValue(row,col,player);
         if (isGameDraw()) {
             return GAME_IS_DRAW;
-        } else if (ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)
-                || ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(col,player)
-                || ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO(player)) {
+        } else if (isGameWon(row, col)) {
             return PLAYER+player+ WON;
         }
         player = player == X ? O : X;
         return GAME_IS_CONTINUE;
+    }
+
+    private boolean isGameWon(int row, int col) {
+        return ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)
+                || ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(col,player)
+                || ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO(player);
     }
 
     private boolean isGameDraw() {
