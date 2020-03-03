@@ -194,4 +194,9 @@ public class TicTacToeBoardTest {
     public void ticTacToeBoardShouldReturnIntArrayOfIndex_00_ForPosition1() {
         assertThat(ticTacToeBoard.getBoardIndex(1), is(new int[]{0,0}));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnIntArrayOfIndex_01_ForPosition2() {
+        assertThat(ticTacToeBoard.getBoardIndex(2), is(new int[]{0,1}));
+    }
 }
