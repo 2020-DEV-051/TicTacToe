@@ -7,6 +7,7 @@ class TicTacToeBoard {
     private static final char X = 'X';
     private static final char O = 'O';
     private static final char HYPHEN = '-';
+    private static final String POSITION_IS_INVALID = "Position is Invalid.";
     char[][] box;
     private List<int[]> boardIndex = Arrays.asList(new int[][]{
             {0,0},{0,1},{0,2},
@@ -84,7 +85,7 @@ class TicTacToeBoard {
 
     int[] getBoardIndex(int position) throws InvalidPositionException {
         if (position > 9 || position < 1) {
-            throw new InvalidPositionException("Position is Invalid.");
+            throw new InvalidPositionException(POSITION_IS_INVALID);
         }
         return this.boardIndex.get(position-1);
     }
