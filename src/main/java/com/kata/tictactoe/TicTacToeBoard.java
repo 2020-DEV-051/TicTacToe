@@ -87,6 +87,8 @@ class TicTacToeBoard {
                 return this.boardIndex.get(0);
             case 2 :
                 return this.boardIndex.get(1);
+            case 9 :
+                return this.boardIndex.get(8);
         }
         return null;
     }
