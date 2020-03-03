@@ -191,17 +191,22 @@ public class TicTacToeBoardTest {
     }
 
     @Test
-    public void ticTacToeBoardShouldReturnIntArrayOfIndex_00_ForPosition1() {
+    public void ticTacToeBoardShouldReturnIntArrayOfIndex_00_ForPosition1() throws InvalidPositionException {
         assertThat(ticTacToeBoard.getBoardIndex(1), is(new int[]{0,0}));
     }
 
     @Test
-    public void ticTacToeBoardShouldReturnIntArrayOfIndex_01_ForPosition2() {
+    public void ticTacToeBoardShouldReturnIntArrayOfIndex_01_ForPosition2() throws InvalidPositionException {
         assertThat(ticTacToeBoard.getBoardIndex(2), is(new int[]{0,1}));
     }
 
     @Test
-    public void ticTacToeBoardShouldReturnIntArrayOfIndex_22_ForPosition9() {
+    public void ticTacToeBoardShouldReturnIntArrayOfIndex_22_ForPosition9() throws InvalidPositionException {
         assertThat(ticTacToeBoard.getBoardIndex(9), is(new int[]{2,2}));
+    }
+
+    @Test(expected = InvalidPositionException.class)
+    public void ticTacToeBoardShouldThrow_InvalidPositionException_IfThePositionIsGreaterThan9() throws InvalidPositionException {
+        int [] boardIndex = ticTacToeBoard.getBoardIndex(10);
     }
 }
