@@ -14,4 +14,11 @@ public class TicTacToeGameTest {
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
         assertThat(ticTacToeGame.playGame(0,0), is(GAME_IS_CONTINUE));
     }
+
+    @Test
+    public void ticTacToeGameShouldReturn_PositionMessage_IfPlayerOPlaysOnPlayedPosition() {
+        TicTacToeGame ticTacToeGame = new TicTacToeGame();
+        assertThat(ticTacToeGame.playGame(0,1), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(0,1), is("Player O plays on the played position."));
+    }
 }
