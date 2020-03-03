@@ -1,9 +1,16 @@
 package com.kata.tictactoe;
 
+import java.util.Arrays;
+import java.util.List;
+
 class TicTacToeBoard {
     private static final char X = 'X';
     private static final char O = 'O';
     char[][] box;
+    private List<int[]> boardIndex = Arrays.asList(new int[][]{
+            {0,0},{0,1},{0,2},
+            {1,0},{1,1},{1,2},
+            {2,0},{2,1},{2,2}});
 
     TicTacToeBoard() {
         this.box = new char[3][3];
@@ -75,6 +82,10 @@ class TicTacToeBoard {
     }
 
     int[] getBoardIndex(int position) {
-        return new int[]{0,0};
+        switch (position) {
+            case 1 :
+                return this.boardIndex.get(0);
+        }
+        return null;
     }
 }
