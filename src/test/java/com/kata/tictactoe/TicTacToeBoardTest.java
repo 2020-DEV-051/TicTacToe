@@ -14,6 +14,8 @@ import static org.junit.Assert.assertThat;
 
 public class TicTacToeBoardTest {
 
+    private static final char O = 'O';
+    private static final char X = 'X';
     private TicTacToeBoard ticTacToeBoard;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -37,25 +39,25 @@ public class TicTacToeBoardTest {
 
     @Test
     public void ticTacToeBoardShouldReturnXAtIndex_02_WhenSetValueIsXAtIndex_02() {
-        ticTacToeBoard.setValue(0,2, 'X');
-        assertThat(ticTacToeBoard.box[0][2], is('X'));
+        ticTacToeBoard.setValue(0,2, X);
+        assertThat(ticTacToeBoard.box[0][2], is(X));
     }
 
     @Test
     public void ticTacToeBoardShouldGetOAtIndex_20_WhenSetValueIsOAtThatIndex() {
-        ticTacToeBoard.setValue(2,0, 'O');
-        assertThat(ticTacToeBoard.getValue(2, 0), is('O'));
+        ticTacToeBoard.setValue(2,0, O);
+        assertThat(ticTacToeBoard.getValue(2, 0), is(O));
     }
 
     @Test
     public void ticTacToeBoardShouldGetXAtIndex_20_WhenSetValueIsXAtThatIndex() {
-        ticTacToeBoard.setValue(2,0, 'X');
-        assertThat(ticTacToeBoard.getValue(2, 0), is('X'));
+        ticTacToeBoard.setValue(2,0, X);
+        assertThat(ticTacToeBoard.getValue(2, 0), is(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueWhenPlayerXPlaysOnPlayedPositionSay_11(){
-        ticTacToeBoard.setValue(1,1, 'X');
+        ticTacToeBoard.setValue(1,1, X);
         assertTrue(ticTacToeBoard.isPlayedPosition(1, 1));
     }
 
@@ -66,114 +68,114 @@ public class TicTacToeBoardTest {
 
     @Test
     public void ticTacToeBoardShouldReturnTrueWhenPlayerOPlaysOnPlayedPositionSay_11(){
-        ticTacToeBoard.setValue(1,1, 'O');
+        ticTacToeBoard.setValue(1,1, O);
         assertTrue(ticTacToeBoard.isPlayedPosition(1, 1));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfFirstRowIsFullOfO() {
-        ticTacToeBoard.setValue(0,0, 'O');
-        ticTacToeBoard.setValue(0,1, 'O');
-        ticTacToeBoard.setValue(0,2, 'O');
-        assertTrue(ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(0, 'O'));
+        ticTacToeBoard.setValue(0,0, O);
+        ticTacToeBoard.setValue(0,1, O);
+        ticTacToeBoard.setValue(0,2, O);
+        assertTrue(ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(0, O));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfFirstRowIsNotFullOfO() {
-        ticTacToeBoard.setValue(0,0, 'O');
-        ticTacToeBoard.setValue(0,1, 'X');
-        ticTacToeBoard.setValue(0,2, 'O');
-        assertFalse(ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(0, 'O'));
+        ticTacToeBoard.setValue(0,0, O);
+        ticTacToeBoard.setValue(0,1, X);
+        ticTacToeBoard.setValue(0,2, O);
+        assertFalse(ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(0, O));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfFirstColumnIsFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(1,0, 'X');
-        ticTacToeBoard.setValue(2,0, 'X');
-        assertTrue(ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(0, 'X'));
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(1,0, X);
+        ticTacToeBoard.setValue(2,0, X);
+        assertTrue(ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(0, X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfFirstColumnIsNotFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(1,0, 'O');
-        ticTacToeBoard.setValue(2,0, 'X');
-        assertFalse(ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(0, 'X'));
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(1,0, O);
+        ticTacToeBoard.setValue(2,0, X);
+        assertFalse(ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(0, X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfFirstDiagonalIsFullOfX() {
-        ticTacToeBoard.setValue(0,2, 'X');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(2,0, 'X');
-        assertTrue(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,2, X);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(2,0, X);
+        assertTrue(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfFirstDiagonalIsNotFullOfX() {
-        ticTacToeBoard.setValue(0,2, 'X');
-        ticTacToeBoard.setValue(1,1, 'O');
-        ticTacToeBoard.setValue(2,0, 'X');
-        assertFalse(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,2, X);
+        ticTacToeBoard.setValue(1,1, O);
+        ticTacToeBoard.setValue(2,0, X);
+        assertFalse(ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfSecondDiagonalIsFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(2,2, 'X');
-        assertTrue(ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(2,2, X);
+        assertTrue(ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfSecondDiagonalIsNotFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(2,2, 'O');
-        assertFalse(ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(2,2, O);
+        assertFalse(ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfEitherDiagonalIsFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(2,2, 'X');
-        assertTrue(ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(2,2, X);
+        assertTrue(ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfEitherDiagonalIsNotFullOfX() {
-        ticTacToeBoard.setValue(0,0, 'O');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(2,2, 'X');
-        assertFalse(ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO('X'));
+        ticTacToeBoard.setValue(0,0, O);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(2,2, X);
+        assertFalse(ticTacToeBoard.isEitherDiagonalFullOfEitherXOrO(X));
     }
 
     @Test
     public void ticTacToeBoardShouldReturnTrueIfFull() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(0,1, 'O');
-        ticTacToeBoard.setValue(0,2, 'X');
-        ticTacToeBoard.setValue(1,0, 'O');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(1,2, 'O');
-        ticTacToeBoard.setValue(2,1, 'X');
-        ticTacToeBoard.setValue(2,0, 'O');
-        ticTacToeBoard.setValue(2,2, 'X');
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(0,1, O);
+        ticTacToeBoard.setValue(0,2, X);
+        ticTacToeBoard.setValue(1,0, O);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(1,2, O);
+        ticTacToeBoard.setValue(2,1, X);
+        ticTacToeBoard.setValue(2,0, O);
+        ticTacToeBoard.setValue(2,2, X);
         assertTrue(ticTacToeBoard.isBoardFull());
     }
 
     @Test
     public void ticTacToeBoardShouldReturnFalseIfNotFull() {
-        ticTacToeBoard.setValue(0,0, 'X');
-        ticTacToeBoard.setValue(0,1, 'O');
-        ticTacToeBoard.setValue(0,2, 'X');
-        ticTacToeBoard.setValue(1,0, 'O');
-        ticTacToeBoard.setValue(1,1, 'X');
-        ticTacToeBoard.setValue(1,2, 'O');
-        ticTacToeBoard.setValue(2,1, 'X');
-        ticTacToeBoard.setValue(2,0, 'O');
+        ticTacToeBoard.setValue(0,0, X);
+        ticTacToeBoard.setValue(0,1, O);
+        ticTacToeBoard.setValue(0,2, X);
+        ticTacToeBoard.setValue(1,0, O);
+        ticTacToeBoard.setValue(1,1, X);
+        ticTacToeBoard.setValue(1,2, O);
+        ticTacToeBoard.setValue(2,1, X);
+        ticTacToeBoard.setValue(2,0, O);
         assertFalse(ticTacToeBoard.isBoardFull());
     }
 
@@ -185,7 +187,7 @@ public class TicTacToeBoardTest {
 
     @Test
     public void ticTacToeBoardShouldBeDisplayedWithXAtIndex_00IfXIsSetAtThatIndex() {
-        ticTacToeBoard.setValue(0,0,'X');
+        ticTacToeBoard.setValue(0,0, X);
         ticTacToeBoard.displayBoard();
         assertThat(outContent.toString(), is("X--\r\n---\r\n---\r\n"));
     }
