@@ -23,7 +23,8 @@ class TicTacToeGame {
         ticTacToeBoard.setValue(row,col,player);
         if (ticTacToeBoard.isBoardFull()) {
             return GAME_IS_DRAW;
-        } else if (ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)) {
+        } else if (ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)
+                || ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(col,player)) {
             return PLAYER+player+ WON;
         }
         player = player == X ? O : X;
