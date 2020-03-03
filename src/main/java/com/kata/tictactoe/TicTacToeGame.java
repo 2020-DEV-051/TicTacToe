@@ -8,6 +8,7 @@ class TicTacToeGame {
     private static final char X = 'X';
     private static final char O = 'O';
     private static final String GAME_IS_DRAW = "Game is Draw!";
+    private static final String WON = " Won!";
     TicTacToeBoard ticTacToeBoard;
     private char player = X;
 
@@ -23,7 +24,7 @@ class TicTacToeGame {
         if (ticTacToeBoard.isBoardFull()) {
             return GAME_IS_DRAW;
         } else if (ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)) {
-            return PLAYER+player+" Won!";
+            return PLAYER+player+ WON;
         }
         player = player == X ? O : X;
         return GAME_IS_CONTINUE;
