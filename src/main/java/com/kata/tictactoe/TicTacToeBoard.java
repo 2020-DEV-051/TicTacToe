@@ -6,6 +6,7 @@ import java.util.List;
 class TicTacToeBoard {
     private static final char X = 'X';
     private static final char O = 'O';
+    private static final char HYPHEN = '-';
     char[][] box;
     private List<int[]> boardIndex = Arrays.asList(new int[][]{
             {0,0},{0,1},{0,2},
@@ -72,7 +73,7 @@ class TicTacToeBoard {
         for (char[] row : this.box){
             for (char c : row) {
                 if (c != X && c != O) {
-                    System.out.print('-');
+                    System.out.print(HYPHEN);
                 } else {
                     System.out.print(c);
                 }
