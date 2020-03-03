@@ -27,4 +27,17 @@ public class TicTacToeGameTest {
         assertThat(ticTacToeGame.playGame(0,1), is(GAME_IS_CONTINUE));
         assertThat(ticTacToeGame.playGame(0,1), is(PLAYER_O_PLAYS_ON_THE_PLAYED_POSITION));
     }
+
+    @Test
+    public void ticTacToeGameShouldReturn_GameIsDrawMessage_IfThePlayersMoveAlternativelyUntilGameIsDraw() {
+        assertThat(ticTacToeGame.playGame(0,0), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(0,1), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(0,2), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,0), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,1), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,2), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(2,1), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(2,0), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(2,2), is("Game is Draw!"));
+    }
 }

@@ -15,6 +15,9 @@ class TicTacToeGame {
             return PLAYER +player+ PLAYS_ON_THE_PLAYED_POSITION;
         }
         ticTacToeBoard.setValue(row,col,player);
+        if (ticTacToeBoard.isBoardFull()) {
+            return "Game is Draw!";
+        }
         player = player == X ? O : X;
         return GAME_IS_CONTINUE;
     }
