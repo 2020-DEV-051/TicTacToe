@@ -11,11 +11,12 @@ public class TicTacToeGameTest {
     private static final String GAME_IS_CONTINUE = "Game is Continue!";
     private static final String PLAYER_O_PLAYS_ON_THE_PLAYED_POSITION = "Player O plays on the played position.";
     private static final String GAME_IS_DRAW = "Game is Draw!";
+    private TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
     private TicTacToeGame ticTacToeGame;
 
     @Before
     public void setUp() {
-        ticTacToeGame = new TicTacToeGame();
+        ticTacToeGame = new TicTacToeGame(ticTacToeBoard);
     }
 
     @Test

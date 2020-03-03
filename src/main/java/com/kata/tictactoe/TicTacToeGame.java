@@ -8,8 +8,12 @@ class TicTacToeGame {
     private static final char X = 'X';
     private static final char O = 'O';
     private static final String GAME_IS_DRAW = "Game is Draw!";
-    TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
+    TicTacToeBoard ticTacToeBoard;
     private char player = X;
+
+    TicTacToeGame(TicTacToeBoard ticTacToeBoard) {
+        this.ticTacToeBoard = ticTacToeBoard;
+    }
 
     String playGame(int row, int col) {
         if (ticTacToeBoard.isPlayedPosition(row, col)) {
