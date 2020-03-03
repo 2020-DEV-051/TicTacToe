@@ -3,15 +3,19 @@ package com.kata.tictactoe;
 class TicTacToeGame {
 
     private static final String GAME_IS_CONTINUE = "Game is Continue!";
+    private static final String PLAYER = "Player ";
+    private static final String PLAYS_ON_THE_PLAYED_POSITION = " plays on the played position.";
+    private static final char X = 'X';
+    private static final char O = 'O';
     TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
-    private char player = 'X';
+    private char player = X;
 
     String playGame(int row, int col) {
         if (ticTacToeBoard.isPlayedPosition(row, col)) {
-            return "Player "+player+" plays on the played position.";
+            return PLAYER +player+ PLAYS_ON_THE_PLAYED_POSITION;
         }
         ticTacToeBoard.setValue(row,col,player);
-        player = player == 'X' ? 'O' : 'X';
+        player = player == X ? O : X;
         return GAME_IS_CONTINUE;
     }
 }
