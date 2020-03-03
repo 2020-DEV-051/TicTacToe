@@ -189,4 +189,9 @@ public class TicTacToeBoardTest {
         ticTacToeBoard.displayBoard();
         assertThat(outContent.toString(), is("X--\r\n---\r\n---\r\n"));
     }
+
+    @Test
+    public void ticTacToeBoardShouldReturnIntArrayOfIndex_00_ForPosition1() {
+        assertThat(ticTacToeBoard.getBoardIndex(1), is(new int[]{0,0}));
+    }
 }
