@@ -7,6 +7,7 @@ class TicTacToeGame {
     private static final String PLAYS_ON_THE_PLAYED_POSITION = " plays on the played position.";
     private static final char X = 'X';
     private static final char O = 'O';
+    private static final String GAME_IS_DRAW = "Game is Draw!";
     TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
     private char player = X;
 
@@ -16,7 +17,7 @@ class TicTacToeGame {
         }
         ticTacToeBoard.setValue(row,col,player);
         if (ticTacToeBoard.isBoardFull()) {
-            return "Game is Draw!";
+            return GAME_IS_DRAW;
         }
         player = player == X ? O : X;
         return GAME_IS_CONTINUE;
