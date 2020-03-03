@@ -25,7 +25,8 @@ class TicTacToeGame {
             return GAME_IS_DRAW;
         } else if (ticTacToeBoard.isAnyOfRowFullOfEitherXOrO(row,player)
                 || ticTacToeBoard.isAnyOfColumnFullOfEitherXOrO(col,player)
-                || ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO(player)) {
+                || ticTacToeBoard.isFirstDiagonalFullOfEitherXOrO(player)
+                || ticTacToeBoard.isSecondDiagonalFullOfEitherXOrO(player)) {
             return PLAYER+player+ WON;
         }
         player = player == X ? O : X;

@@ -70,4 +70,13 @@ public class TicTacToeGameTest {
         assertThat(ticTacToeGame.playGame(1,2), is(GAME_IS_CONTINUE));
         assertThat(ticTacToeGame.playGame(2,0), is(PLAYER_X_WON));
     }
+
+    @Test
+    public void ticTacToeShouldReturn_WinningMessage_IfPlayerXCompletesSecondDiagonal() {
+        assertThat(ticTacToeGame.playGame(0,0), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,0), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,1), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(1,2), is(GAME_IS_CONTINUE));
+        assertThat(ticTacToeGame.playGame(2,2), is(PLAYER_X_WON));
+    }
 }
